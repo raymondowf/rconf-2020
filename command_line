@@ -1,0 +1,13 @@
+# build docker image
+docker build -t raymondowf/deploymodel:latest .
+
+# run image
+
+# upload image to Docker Hub
+
+# login and upload image to heroku
+heroku container:login 
+heroku create rconf2020-model
+heroku container:push web -a rconf2020-model
+heroku container:release web --app rconf2020-model
+

@@ -10,7 +10,7 @@
 library(plumber)
 library(randomForest)
 
-#* @apiTitle Plumber Example API
+#* @apiTitle Plumber Example API for R Conference Malaysia 2020
 
 #* To predict the species of iris based on the following parameters (in numeric).
 #* @param sepal_length sepal length
@@ -27,6 +27,22 @@ function(sepal_length, sepal_width, petal_length, petal_width)
                                                Petal.Width = as.numeric(petal_width)
   ))
   return(as.character(label))
+}
+
+#* Index Page
+#* @serializer html
+#* @get /
+function(){
+  index_page = "<html><body>
+  <div style = 'text-align:center'>
+  <h1>Demo</h1>
+  <h2>Deploying Models as Web Service using Plumber</h2>
+  <h4><i>A walkthrough with RStudio, Heroku and Amazon Web Services</i></h4>
+  <h5>R Conference Malaysia 2020</h5>
+  </div>
+  </body></html>
+  "
+  return(index_page)  
 }
 
 #* Return top 5 of the "iris data-set
