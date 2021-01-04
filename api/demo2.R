@@ -9,8 +9,23 @@
 
 library(plumber)
 
-#* @apiTitle Plumber Example API
+#* @apiTitle Plumber Example API for R Conference Malaysia 2020
 
+#* Index Page
+#* @serializer html
+#* @get /
+function(){
+  index_page = "<html><body>
+  <div style = 'text-align:center'>
+  <h1>Demo</h1>
+  <h2>Deploying Models as Web Service using Plumber</h2>
+  <h4><i>A walkthrough with RStudio, Heroku and Amazon Web Services</i></h4>
+  <h5>R Conference Malaysia 2020</h5>
+  </div>
+  </body></html>
+  "
+  return(index_page)  
+}
 #* Return top 5 of the "iris data-set
 #* @get /iris_top_5
 function(){
